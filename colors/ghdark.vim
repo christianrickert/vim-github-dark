@@ -14,12 +14,14 @@ let g:github_colors = {
   \ "base3"        : ["#89929b", 243],
   \ "base4"        : ["#c6cdd5", 249],
   \ "base5"        : ["#ecf2f8", 252],
-  \ "red"          : ["#fa7970", 210],
-  \ "orange"       : ["#faa356", 178],
+  \ "blue"         : ["#77bdfb", 75],
+  \ "cyan"         : ["#8abeb7", 51],
   \ "green"        : ["#7ce38b", 114],
   \ "lightblue"    : ["#a2d2fb", 153],
-  \ "blue"         : ["#77bdfb", 75],
+  \ "orange"       : ["#faa356", 178],
   \ "purp"         : ["#cea5fb", 183],
+  \ "red"          : ["#fa7970", 210],
+  \ "yellow"       : ["#f0c674", 214],
   \ "none"         : ["NONE", "NONE"]
   \ }
 
@@ -94,6 +96,7 @@ if g:gh_color ==# "soft"
     let g:github_colors["base0"] = g:github_colors["base1"]
     let g:github_colors["base1"] = g:github_colors["base2"]
     let g:github_colors["base2"] = ["#30353c", 238]
+    let g:github_colors["base5"] = g:github_colors["base4"]
 endif
 
 "########################################
@@ -139,21 +142,23 @@ call s:ghhl("GhBase2", "base2")
 call s:ghhl("GhBase3", "base3")
 call s:ghhl("GhBase4", "base4")
 call s:ghhl("GhBase5", "base5")
-call s:ghhl("GhRed", "red")
-call s:ghhl("GhRedItalic", "red", "none", "italic")
-call s:ghhl("GhPurp", "purp")
-call s:ghhl("GhPurpUnder", "purp", "none", "underline")
 call s:ghhl("GhBlue", "blue")
-call s:ghhl("GhBlueUnder", "blue", "none", "underline")
 call s:ghhl("GhBlueBold", "blue", "none", "bold")
 call s:ghhl("GhBlueItalic", "blue", "none", "italic")
+call s:ghhl("GhBlueUnder", "blue", "none", "underline")
+call s:ghhl("GhBold", "none", "none", "bold")
+call s:ghhl("GhCyan", "cyan")
+call s:ghhl("GhGreen", "green")
+call s:ghhl("GhItalic", "none", "none", "italic")
+call s:ghhl("GhLightBlue", "lightblue")
 call s:ghhl("GhOrange", "orange")
 call s:ghhl("GhOrangeBold", "orange", "none", "bold")
-call s:ghhl("GhLightBlue", "lightblue")
-call s:ghhl("GhGreen", "green")
+call s:ghhl("GhPurp", "purp")
+call s:ghhl("GhPurpUnder", "purp", "none", "underline")
+call s:ghhl("GhRed", "red")
+call s:ghhl("GhRedItalic", "red", "none", "italic")
 call s:ghhl("GhUnder", "none", "none", "underline")
-call s:ghhl("GhBold", "none", "none", "bold")
-call s:ghhl("GhItalic", "none", "none", "italic")
+call s:ghhl("GhYellow", "yellow")
 
 call s:ghhl("Cursor", "base4", "none", "reverse")
 call s:ghhl("iCursor", "base0", "red")
@@ -216,7 +221,7 @@ hi! link MsgArea Title
 hi! link Noise Delimiter
 hi! link NonText GhBase3
 hi! link NonText Ignore
-hi! link Number GhOrange
+hi! link Number GhLightBlue
 hi! link Operator GhBlue
 hi! link PreCondit PreProc
 hi! link PreProc GhBlue
@@ -231,11 +236,11 @@ hi! link SpecialChar Special
 hi! link Special GhBlue
 hi! link SpecialKey GhBase3
 hi! link SpecialKey Ignore
-hi! link Statement GhRed
+hi! link Statement GhOrange
 hi! link StatusLineTermNC StatusLineNC
 hi! link StatusLineTerm StatusLine
 hi! link StorageClass Statement
-hi! link String Constant
+hi! link String GhCyan
 hi! link StringDelimiter String
 hi! link Structure Statement
 hi! link TabLineFill StatusLineNC
@@ -244,7 +249,7 @@ hi! link TabLine StatusLineNC
 hi! link Tag Special
 hi! link Terminal Normal
 hi! link Title GhBase4
-hi! link Type GhRed
+hi! link Type GhLightBlue
 
 " ALE
 
